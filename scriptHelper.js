@@ -1,6 +1,11 @@
 // Write your helper functions here!
 require('isomorphic-fetch');
 
+const pilotName = document.querySelector('input[name="pilotName"]');
+const copilotName = document.querySelector('input[name="copilotName"]');
+const fuelLevel = document.querySelector('input[name="fuelLevel"]');
+const cargoMass = document.querySelector('input[name="cargoMass"]');
+
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
    /*
@@ -17,7 +22,9 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
-   
+    if(testInput === "") {
+        alert(`${testInput.name} Empty`)
+    }
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
