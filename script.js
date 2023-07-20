@@ -1,17 +1,18 @@
 // Write your JavaScript code here!
 
-// const list = document.getElementsById("faultyItems")
-// const pilotName = document.getElementsByName("pilotName").innerHTML;
-// const copilotName = document.getElementsByName("copilotName").innerHTML;
-// const fuelLevel = document.getElementsByName("fuelLevel").innerHTML;
-// const cargoMass = document.getElementsByName("cargoMass").innerHTML;
-
 
 window.addEventListener("load", function() {
+    //added array number because there was not ID for the last 3 input fields and the ByName returns a nodelist.
+    const list = window.document.getElementById("faultyItems")
+    const pilotName = document.querySelector("input");
+    const copilotName = document.getElementsByName("copilotName")[0];
+    const fuelLevel = document.getElementsByName("fuelLevel")[0];
+    const cargoMass = document.getElementsByName("cargoMass")[0];
     const submit = document.querySelector("button");
     submit.addEventListener("click", (e) => {
         e.preventDefault();
-        formSubmission()
+        console.log(copilotName.value)
+        formSubmission(window.document, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value)
     });
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()

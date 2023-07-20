@@ -47,26 +47,26 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         } else alert("Pilot's names must only contain letters.");
         
         if(validation[2] === "Is a Number" && validation[3] === "Is a Number") {   
-            if(fuelLevel > 10000) {
+            if(fuelLevel < 10000) {
                 launchStatus.style.color = "rgb(199, 37, 78)";
-                launchStatus.textcontent = "Shuttle Not Ready for Launch";
+                launchStatus.innerHTML = "Shuttle Not Ready for Launch";
                 fuelStatus.innerHTML = "Fuel level too low for launch";
                 readyToLaunch = false;
             }
-            if(cargoLevel < 10000) {
+            if(cargoLevel > 10000) {
                 launchStatus.style.color = "rgb(199, 37, 78)";
-                launchStatus.textcontent = "Shuttle Not Ready for Launch";
+                launchStatus.innerHTML = "Shuttle Not Ready for Launch";
                 cargoLevel.innerHTML = "Cargo mass too heavy for launch";
                 readyToLaunch = false;
             }     
             } else alert("Fuel Level and Cargo Level must be numbers.")
         
         if(readyToLaunch) {
-        launchStatus.style.color = rgb(65, 159, 106);
+        launchStatus.style.color = "rgb(65, 159, 106)";
         launchStatus.innerHTML = "Shuttle ready for launch";
         }
-    document.list.style.visibility = visible;
     }
+    list.style.visibility = "visible";
 }
 
 async function myFetch() {
