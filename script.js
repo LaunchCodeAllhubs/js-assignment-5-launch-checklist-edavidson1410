@@ -1,6 +1,5 @@
 // Write your JavaScript code here!
 
-
 window.addEventListener("load", function() {
     //added array number because there was not ID for the last 3 input fields and the ByName returns a nodelist.
     const list = document.getElementById("faultyItems")
@@ -11,9 +10,9 @@ window.addEventListener("load", function() {
     const submit = document.querySelector("button");
     submit.addEventListener("click", (e) => {
         e.preventDefault();
-        console.log(list)
         formSubmission(window.document, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value)
     });
+    
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
    let listedPlanetsResponse;
