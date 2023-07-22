@@ -8,13 +8,15 @@ window.addEventListener("load", function() {
     const fuelLevel = document.getElementsByName("fuelLevel")[0];
     const cargoMass = document.getElementsByName("cargoMass")[0];
     const submit = document.querySelector("button");
+
     submit.addEventListener("click", (e) => {
         e.preventDefault();
-        formSubmission(window.document, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value)
+        formSubmission(window.document, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value);
     });
     
    let listedPlanets;
-   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+   listedPlanets = myFetch();
+   console.log(listedPlanets)
    let listedPlanetsResponse;
    listedPlanetsResponse.then(function (result) {
        listedPlanets = result;
